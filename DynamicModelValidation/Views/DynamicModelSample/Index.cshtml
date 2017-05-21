@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Dynamic Model Sample Page";
+}
+@model DynamicModelValidation.Models.Student
+
+<div class="jumbotron">
+    <h1>Dynamic Model Sample</h1>
+</div>
+
+@using (Html.BeginForm("Index", "DynamicModelSample", FormMethod.Post, new { id = "formDynamic" }))
+{
+    @Html.ValidationSummary();
+    <div class="row">
+        <div class="col-md-4">
+            @Html.LabelFor(x => x.Name)
+        </div>
+        <div class="col-md-4">
+            @Html.TextBoxFor(x => x.Name)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            @Html.LabelFor(x => x.Age)
+        </div>
+        <div class="col-md-4">
+            @Html.TextBoxFor(x => x.Age)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            @Html.LabelFor(x => x.Standard)
+        </div>
+        <div class="col-md-4">
+            @Html.TextBoxFor(x => x.Standard)
+        </div>
+    </div>
+}
+
+<input type="button" value="Submit" id="SubmitButton" />
+
+<script type="text/javascript">
+    $(function () {
+        $("#SubmitButton").on("click", function () {
+            $("#formDynamic").submit();
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
